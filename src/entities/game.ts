@@ -1,4 +1,4 @@
-import { randomUUID } from "crypto";
+import { v4 as uuid} from 'uuid'
 
 class Game {
     id?: string;
@@ -23,7 +23,7 @@ class Game {
 
     constructor () {
         if(!this.id) {
-            this.id = randomUUID();
+            this.id = uuid()
         }
 
     }
