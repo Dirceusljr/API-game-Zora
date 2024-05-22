@@ -14,3 +14,5 @@ class RegisterGameController {
         return res.status(201).json({ message: 'Registro criado com sucesso!'})
     }
 }
+
+export { RegisterGameController }
