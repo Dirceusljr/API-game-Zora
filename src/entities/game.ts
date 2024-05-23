@@ -4,7 +4,7 @@ export interface IGameDTO {
     name: string;
     designer: string;
     genre: string;
-    plataform: string;
+    platform: string;
     developer: string;
     releaseData: string;
     mode: string;
