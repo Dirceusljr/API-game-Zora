@@ -1,5 +1,5 @@
-import { IGameDTO } from "../entities/game";
-import { IGameRepository } from "../repositories/IGameRepository";
+import { IGameDTO } from "../../infra/entities/game";
+import { IGameRepository } from "../../infra/repositories/IGameRepository";
 
 class RegisterGameUseCase {
     constructor(private gameRepository: IGameRepository) {

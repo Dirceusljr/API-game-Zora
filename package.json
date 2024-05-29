@@ -5,11 +5,15 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "tsnd --exit-child --respawn --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "tsnd --exit-child --respawn --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "docker:auth": "docker exec -it c31cd2f9127d psql -h 172.18.0.2 -p 5432 -U games -d games_api",
+    "prisma:migrate": "prisma migrate dev --schema=./src/shared/infra/prisma/schema.prisma",
+    "prisma:generate": "prisma generate --schema=./src/shared/infra/prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "5.14.0",
     "express": "^4.19.2",
+    "tsyringe": "^4.8.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

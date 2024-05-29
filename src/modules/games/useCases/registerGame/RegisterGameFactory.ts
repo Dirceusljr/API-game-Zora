@@ -1,4 +1,5 @@
-import { GameRepository } from "../repositories/GameRepository"
+
+import { GameRepository } from "../../infra/repositories/GameRepository";
 import { RegisterGameController } from "./RegisterGameController";
 import { RegisterGameUseCase } from "./RegisterGameUseCase"
 

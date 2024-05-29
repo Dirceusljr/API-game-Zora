@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
-import { IGameDTO } from "../entities/game"
 import { RegisterGameUseCase } from './RegisterGameUseCase'
-import { GameRepository } from "../repositories/GameRepository";
+import { GameRepository } from "../../infra/repositories/GameRepository";
+import { IGameDTO } from "../../infra/entities/game";
 
 const factory = () => {
     const gameRepository = new GameRepository;
