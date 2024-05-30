@@ -6,7 +6,7 @@ import { IGameRepository } from "../../infra/repositories/IGameRepository";
 class RegisterGameUseCase {
     constructor(
         @inject("GameRepository")
-        private gameRepository: IGameRepository) 
+        private readonly gameRepository: IGameRepository) 
         { }
     async execute({ designer, developer, genre, mode, name, platform, releaseData }: IGameDTO): Promise<void> {
         await this.gameRepository.register({
