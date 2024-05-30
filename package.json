@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
+    "postinstall": "yarn prisma:generate",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node ./dist/shared/infra/http/server.js",
     "dev": "tsnd --exit-child --respawn --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
