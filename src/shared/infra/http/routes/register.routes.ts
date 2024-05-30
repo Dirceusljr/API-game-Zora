@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { registerGameFactory } from "../../../../modules/games/useCases/registerGame/RegisterGameFactory";
+import { RegisterGameController } from "../../../../modules/games/useCases/registerGame/RegisterGameController";
+import { celebrate } from "celebrate";
+import { registerValidator } from "../../../../modules/games/useCases/registerGame/validator";
 
 const registerRoutes = Router();
 
-const registerController = registerGameFactory();
+const registerController = new RegisterGameController();
 
-registerRoutes.post('/', registerController.handler);
+registerRoutes.post('/', celebrate(registerValidator), registerController.handler);
 
 export { registerRoutes }
+
